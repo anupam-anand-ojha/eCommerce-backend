@@ -9,4 +9,6 @@ const productSchema = new mongoose.Schema({
   stock: Number
 });
 
-export default mongoose.model("Product", productSchema);
+const productModel = mongoose.model("product", productSchema);
+
+export default productModel
