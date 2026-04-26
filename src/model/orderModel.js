@@ -1,13 +1,10 @@
 import mongoose from "mongoose";
 
-const cartSchema = new mongoose.Schema({
+const orderSchema = new mongoose.Schema({
   userId: String,
-  items: [
-    {
-      productId: String,
-      quantity: Number
-    }
-  ]
+  items: Array,
+  total: Number,
+  status: { type: String, default: "pending" }
 });
 
-export default mongoose.model("Cart", cartSchema);
+export default mongoose.model("Order", orderSchema);
